@@ -3,13 +3,19 @@
     src: vimrc
     dest: ~/.vimrc
 
+- name: Check if oh-my-zsh was cloned already
+  find:
+    paths: '~/.oh-my-zsh'
+  register: filesFound
+
 - name: clone oh-my-zsh for users
   tags:
     # Suppress warning: [ANSIBLE0006] git used in place of git module
     # Git module doesn't allow us to set `core.autocrlf=input`.
     - skip_ansible_lint
   # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  command: 'git -C ~/.oh-my-zsh pull || git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
+  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
+  when: filesFound.matched = 0
 
 - name: set default shell for users
   become: yes
