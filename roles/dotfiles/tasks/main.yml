@@ -9,7 +9,7 @@
     # Git module doesn't allow us to set `core.autocrlf=input`.
     - skip_ansible_lint
   # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
+  command: 'git -C ~/.oh-my-zsh pull || git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
 
 - name: set default shell for users
   become: yes
