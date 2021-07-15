@@ -17,7 +17,26 @@
     name: '{{ ansible_user_id }}'
     shell: /bin/zsh
 
-- name: zshlogin
+- name: zshrc setup
   copy:
     src: zshrc
     dest: ~/.zshrc
+
+- name: copy theme
+  copy:
+    src: wogri.zsh-theme
+    dest: ~/.oh-my-zsh/themes/wogri.zsh-theme
+
+- name: create .ssh directory
+  file:
+    path: ~/.ssh
+    state: directory
+    mode: 0700
+
+- name: copy authorized keys
+  copy:
+    src: authorized_keys
+    dest: ~/.ssh/authorized_keys
+    mode: 0700
+
+
