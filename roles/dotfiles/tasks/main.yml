@@ -16,3 +16,8 @@
   user:
     name: '{{ ansible_user_id }}'
     shell: /bin/zsh
+
+- name: zshlogin
+  copy:
+    src: zshrc
+    dest: .zshrc

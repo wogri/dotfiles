@@ -38,13 +38,6 @@
     name: en_US.UTF-8
     state: present
 
-- name: zshlogin
-  copy:
-    src: zshrc
-    dest: /etc/zsh/zshrc
-    owner: root
-    group: root
-
 - name: Set default timezone
   timezone:
     name: Europe/Vienna
