@@ -1,7 +1,3 @@
-- name: Set default timezone
-  timezone:
-    name: Europe/Vienna
-
 - name: copy vimrc
   copy:
     src: vimrc
