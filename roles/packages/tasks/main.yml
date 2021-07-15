@@ -1,0 +1,46 @@
+- name: aptget update and install some packages
+  apt: 
+    update_cache: yes
+    name:
+      - tcpdump
+      - bzip2
+      - bash-completion
+      - less
+      - curl
+      - wget
+      - git
+      - telnet
+      - dialog
+      - apt-utils
+      - apticron
+      - screen
+      - rsync
+      - tar
+      - psmisc
+      - host
+      - locales
+      - vim
+      - haveged
+      - man
+      - dbus
+      - net-tools
+      - apt-transport-https
+      - file
+      - sudo 
+      - debian-goodies
+      - udev
+      - netcat
+      - unattended-upgrades
+      - zsh
+
+- name: configure locales.
+  locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+- name: zshlogin
+  copy:
+    src: zshrc
+    dest: /etc/zsh/zshrc
+    owner: root
+    group: root

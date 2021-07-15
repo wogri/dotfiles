@@ -1,0 +1,43 @@
+syntax on
+autocmd BufReadPost *
+ \ if line("'\"") > 0 && line("'\"") <= line("$") |
+ \   exe "normal g`\"" |
+ \ endif
+set background=light
+
+if ! has("gui_running")
+ :source $VIMRUNTIME/menu.vim
+  :set wildmenu
+  :set cpo-=<
+  :set wcm=<C-Z>
+  :map <F4> :emenu <C-Z>
+endif
+
+:nnoremap <C-t> hxpl
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set encoding=utf8
+set fileencoding=utf8
+set number
+set linebreak
+set undofile                " Save undos after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+if has("statusline")
+	set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+" set spell
+let g:Tex_DefaultTargetFormat = 'pdf'
+map <Leader>p <C-^> " Go to previous file
+let mapleader = ","
+set cc=81                                                                       
+highlight ColorColumn ctermbg=grey
+highlight LineNr ctermfg=grey
+highlight SignColumn ctermbg=None
+" Disable mouse which is set in default configs.
+set mouse=
+set ttymouse=
