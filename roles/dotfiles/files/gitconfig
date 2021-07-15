@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Wolfgang Hennerbichler
+	email = wogri@wogri.com
+[protocol]
+#	version = 2
+[core]
+	excludesfile = /home/wogri/.gitignore
+[url "git@github.com:"]
+    insteadOf = https://github.com/

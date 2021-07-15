@@ -23,6 +23,11 @@
     name: '{{ ansible_user_id }}'
     shell: /bin/zsh
 
+- name: git setup
+  copy:
+    src: gitconfig
+    dest: ~/.gitconfig
+
 - name: zshrc setup
   copy:
     src: zshrc
