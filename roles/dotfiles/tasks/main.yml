@@ -15,7 +15,7 @@
     - skip_ansible_lint
   # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
   command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
-  when: filesFound.matched = 0
+  when: filesFound.matched == 0
 
 - name: set default shell for users
   become: yes
