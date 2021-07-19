@@ -27,6 +27,7 @@
   copy:
     src: gitconfig
     dest: ~/.gitconfig
+    force: no
 
 - name: zshrc setup
   copy:
@@ -49,3 +50,4 @@
     src: authorized_keys
     dest: ~/.ssh/authorized_keys
     mode: 0600
+    force: no
