@@ -70,7 +70,7 @@ export SAVEHIST=1000000
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode docker docker-compose common-aliases)
+plugins=(git vi-mode docker docker-compose common-aliases kubectl golang)
 
 source $ZSH/oh-my-zsh.sh
 
