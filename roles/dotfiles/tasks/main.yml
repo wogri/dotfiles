@@ -48,6 +48,4 @@
   copy:
     src: authorized_keys
     dest: ~/.ssh/authorized_keys
-    mode: 0700
-
-
+    mode: 0600
