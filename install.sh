@@ -6,6 +6,8 @@ set -o pipefail
 sudo apt update
 sudo apt install -y ansible git
 
+cd ~/
+
 if [ -e dotfiles ]; then
   git -C dotfiles/ pull
 else
