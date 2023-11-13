@@ -29,7 +29,7 @@
       - sudo 
       - debian-goodies
       - udev
-      - netcat
+      - netcat-traditional
       - unattended-upgrades
       - zsh
 
